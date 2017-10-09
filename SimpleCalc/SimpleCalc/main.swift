@@ -13,12 +13,16 @@ print("Enter an expression separated by returns:")
 let response = readLine(strippingNewline: true)!.trimmingCharacters(in: .whitespacesAndNewlines)
 let responseArr = response.components(separatedBy: " ")
 
+// determine it's three-line calculation or one-line
 if responseArr.count == 1 {
     let operand1 = Double(response)!
+    // trim the whitespaces in input
     let op = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines)
     let thirdLine = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines)
+    
     let operand2 = Double(thirdLine)!
     var result:Double = 0
+    // do the corresponding calculation according to the operator
     switch op {
         case "+": result = operand1 + operand2
         case "-": result = operand1 - operand2
